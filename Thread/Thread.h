@@ -23,9 +23,8 @@ public:
 protected:
 
 private:
-
+	Thread(const Thread& t);
+	Thread& operator= (const Thread& t);
 };
-
-
 
 #endif /* THREAD_H_ */

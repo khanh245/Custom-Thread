@@ -13,13 +13,14 @@
 class IRunnable
 {
 public:
-	IRunnable() : mThread(0) { }
+	IRunnable() : mThread(0), isReady(false) { }
 	virtual ~IRunnable() { }
 
 	virtual void run() = 0;
 
 protected:
 	pthread_t mThread;
+	bool isReady;
 };
 
 #endif /* RUNNABLE_H_ */
