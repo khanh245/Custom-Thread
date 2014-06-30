@@ -8,9 +8,18 @@
 #ifndef THREAD_H_
 #define THREAD_H_
 
-class Thread
+#include "Runnable.h"
+
+#include <pthread.h>
+
+class Thread	:	public IRunnable
 {
 public:
+	Thread();
+	Thread(const IRunnable& runnable);
+	~Thread();
+
+	void run();
 
 protected:
 
