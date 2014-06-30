@@ -10,8 +10,6 @@
 
 #include "Runnable.h"
 
-#include <pthread.h>
-
 class Thread	:	public IRunnable
 {
 public:
@@ -20,6 +18,7 @@ public:
 	~Thread();
 
 	void run();
+	void start();
 
 protected:
 
