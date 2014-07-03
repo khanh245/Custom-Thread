@@ -5,29 +5,24 @@
  *      Author: khanhn
  */
 
+#include <stdexcept>
+
 #include "Thread.h"
 
-Thread::Thread()
-{
+Thread::Thread()	:	mRunnable(0)
+{ }
 
-}
-
-Thread::Thread(const IRunnable& runnable)
-{
-
-}
+Thread::Thread(const IRunnable* runnable)	:
+		mRunnable(const_cast<IRunnable*>(runnable))
+{ }
 
 Thread::~Thread()
 {
-
-}
-
-void Thread::run()
-{
-
+	if (mRunnable) delete mRunnable;
+	mRunnable = NULL;
 }
 
 void Thread::start()
 {
-
+	mRunnable->run();
 }

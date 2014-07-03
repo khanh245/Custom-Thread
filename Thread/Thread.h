@@ -13,18 +13,20 @@
 class Thread	:	public IRunnable
 {
 public:
-	Thread();
-	Thread(const IRunnable& runnable);
+	Thread(const IRunnable* runnable);
 	~Thread();
 
-	void run();
 	void start();
 
 protected:
+	Thread();
 
 private:
 	Thread(const Thread& t);
 	Thread& operator= (const Thread& t);
+
+	void run() { }
+	IRunnable* mRunnable;
 };
 
 #endif /* THREAD_H_ */
