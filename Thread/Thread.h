@@ -13,9 +13,10 @@
 class Thread	:	public IRunnable
 {
 public:
-	Thread(const IRunnable* runnable);
+	Thread(IRunnable* const runnable);
 	~Thread();
 
+	// TODO: Implement a start/stop thread with pthread
 	void start();
 
 protected:

@@ -12,8 +12,8 @@
 Thread::Thread()	:	mRunnable(0)
 { }
 
-Thread::Thread(const IRunnable* runnable)	:
-		mRunnable(const_cast<IRunnable*>(runnable))
+Thread::Thread(IRunnable* const runnable)	:
+		mRunnable(runnable)
 { }
 
 Thread::~Thread()
